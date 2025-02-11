@@ -156,7 +156,7 @@ cat("Neural Network - Average F1-Score: \n", mean(nn_f1), "\n")
 
 set.seed(123) #for reproducibility
 
-## STEP 1: Building the Model ##
+## STEP 1: Building the Model (Random Forest) ##
 
 # First try-out Model: simple Decision Tree Classifier
 decision_tree <- tree(as.factor(train_filtered$label) ~., data = train_filtered)
