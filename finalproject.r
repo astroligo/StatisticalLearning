@@ -1,6 +1,6 @@
                                     #########################################
                                      # STATISTICAL LEARNING: FINAL PROJECT #
-                                          #Student Number: 01/1359750#
+                                               # READING SIGNS #
                                     #########################################
                                          
 cat("\n#### STATISTICAL LEARNING: FINAL PROJECT ####\n")
