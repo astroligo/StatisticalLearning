@@ -128,7 +128,7 @@ legend("topright", legend = c("Training Loss", "Validation Loss"),
        col = c("blue", "lightblue"), lwd = 2)
 dev.off()
 
-# test Accuracy
+# test accuracy
 test_performance <- deep_nn %>% evaluate(x_test, y_test)
 test_accuracy <- test_performance$accuracy
 cat("\nTest accuracy: ", test_accuracy,"\n")
@@ -138,7 +138,7 @@ nn_pred_probs <- predict(deep_nn, x_test)
 nn_pred <- apply(nn_pred_probs, 1, which.max) - 1
 nn_cm <- confusionMatrix(as.factor(nn_pred), as.factor(test_filtered$label))
 
-# precision, recall, and F1
+# precision, recall, and F1-score
 nn_precision <- nn_cm$byClass[, "Precision"]
 nn_recall <- nn_cm$byClass[, "Recall"]
 nn_f1 <- nn_cm$byClass[, "F1"]
@@ -186,8 +186,8 @@ cat("\nRandom Forest Training Time (sec): ", end - start)
 
 
 ## STEP 2: Evaluating the Model ##
-# Evaluating Model:
 
+# Evaluating Model:
 # plotting error vs. number of trees
 png(file = "RandomForest_numtrees.png")
 plot(rf_model,main = "Random Forest Classification Model")
@@ -216,6 +216,6 @@ cat("Random Forest - Average Precision: ", mean(rf_precision), "\n")
 cat("Random Forest - Average Recall: ", mean(rf_recall), "\n")
 cat("Random Forest - Average F1-Score: ", mean(rf_f1), "\n")
 
-################################################################################################################
+###########################################################################################################
 
 cat("\n########### End of Script ##########\n")
